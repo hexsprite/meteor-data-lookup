@@ -6,32 +6,30 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("METEOR@3.2.2");
+  api.versionsFrom(["2.3", "3.0"]);
 
   // Core dependencies.
   api.use([
-    "coffeescript@2.4.1",
     "ecmascript",
-    "underscore@1.6.4",
-    "tracker@1.3.4"
+    "underscore",
+    "tracker"
   ]);
 
   // 3rd party dependencies.
   api.use([
-    "sylido:computed-field@0.11.0"
+    "sylido:computed-field"
   ]);
 
   api.export("DataLookup");
 
-  api.mainModule("lib.coffee");
+  api.mainModule("lib.js");
 });
 
 Package.onTest(function (api) {
-  api.versionsFrom("METEOR@3.2.2");
+  api.versionsFrom(["2.3", "3.0"]);
 
   // Core dependencies.
   api.use([
-    "coffeescript@2.4.1",
     "ecmascript",
     "random",
     "underscore",
@@ -43,13 +41,7 @@ Package.onTest(function (api) {
     "sylido:data-lookup"
   ]);
 
-  // 3rd party dependencies.
-  api.use([
-    "sylido:classy-test@0.4.0",
-    "sylido:server-autorun@0.8.0"
-  ]);
-
   api.addFiles([
-    "tests.coffee"
+    "tests.js"
   ]);
 });
